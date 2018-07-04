@@ -7,7 +7,6 @@ function charCounting(str) {
   for (var i = 0; i < noSpaceStr.length; i++) { //sets empty array
      result[noSpaceStr[i]] = [];
   }
-  console.log(result)
   for (var i = 0; i < noSpaceStr.length; i++) { // adds 1 to empty array
     result[noSpaceStr[i]].push(i);
   }
