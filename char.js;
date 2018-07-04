@@ -1,2 +1,0 @@
-var str = "a l e x";
-var splitStr = str.split("");
