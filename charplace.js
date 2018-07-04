@@ -1,6 +1,3 @@
-//test code
-var str = "test string"; //test string
-
 function charCounting(str) {
   var result = {}//
   var noSpaceStr = str.replace(/\s/g, "").toLowerCase(); //removing spaces
@@ -13,7 +10,7 @@ function charCounting(str) {
   return result;
 }
 //
-console.log(charCounting(str));
+console.log("test string:", charCounting("test string"));
 
 
 // //leave only unique letters//
