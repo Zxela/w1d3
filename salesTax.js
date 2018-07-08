@@ -25,23 +25,26 @@ var totalSales = function (i) {
         var total = 0
         for (var r = 0; r < companySalesData[i].sales.length; r++) {
         total += companySalesData[i].sales[r]
-        console.log(companySalesData[i].sales.length)
+        //total * salestax[province]
         }
         return total;
       }
+
 
 function calculateSalesTax(salesData, taxRates) {
   var TaxedData = {}
   //loop through array * array length
   for (var i = 0; i < companySalesData.length; i++) {
     if(TaxedData[companySalesData[i].name]) {
-     TaxedData[companySalesData[i].name].totalsales += totalSales(i)
+     TaxedData[companySalesData[i].name].totalSales += totalSales(i)
+     TaxedData[companySalesData[i].name].totalTaxes += (totalSales(i) * salesTaxRates[companySalesData[i].province])
     }
     else {
-      TaxedData[companySalesData[i].name] = { totalsales: totalSales(i) }
+      TaxedData[companySalesData[i].name] = { totalSales: totalSales(i), totalTaxes: (totalSales(i) * salesTaxRates[companySalesData[i].province]) }
+
     }
   }
- console.log(TaxedData)
+ return(TaxedData)
 }
   // for (var company in companySalesData) {
   //      += companySalesData.sales[r];
@@ -58,7 +61,7 @@ function calculateSalesTax(salesData, taxRates) {
 
 
 var results = calculateSalesTax(companySalesData, salesTaxRates);
-
+console.log(results)
 /* Expected Results:
 {
   Telus: {
